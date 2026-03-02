@@ -5,6 +5,7 @@ Picks a random page from your Rate Your Music visual collection and opens a rand
 ## What it does
 
 - Detects your current collection visual URL (e.g. `/collection/<user>/visual/15`)
+- Detects your current collection visual URL (e.g. `/collection/<user>/visual/` or `/collection/<user>/visual/15`)
 - Finds available visual page numbers from page navigation links
 - Randomly chooses one page
 - Fetches that page and parses the 5x5 album grid (`table.viz`)
@@ -18,6 +19,7 @@ Picks a random page from your Rate Your Music visual collection and opens a rand
 ## How to use
 
 1. Open a RYM visual collection page while logged in, for example:
+  - `https://rateyourmusic.com/collection/<your-username>/visual/`
    - `https://rateyourmusic.com/collection/<your-username>/visual/1`
 2. Open browser DevTools Console.
 3. Paste the full contents of `rym-random-album-picker.js` and press Enter.

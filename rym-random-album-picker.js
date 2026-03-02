@@ -2,14 +2,14 @@
   const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
   const currentPath = window.location.pathname;
-  const m = currentPath.match(/(\/collection\/[^/]+\/visual\/)(\d+)(?:\/)?$/);
+  const m = currentPath.match(/(\/collection\/[^/]+\/visual\/)(\d+)?(?:\/)?$/);
 
   if (!m) {
-    throw new Error("Run this on a collection visual page like /collection/<user>/visual/<n>");
+    throw new Error("Run this on a collection visual page like /collection/<user>/visual/ or /collection/<user>/visual/<n>");
   }
 
   const basePath = m[1];
-  const currentPage = Number(m[2]);
+  const currentPage = Number(m[2] || 1);
 
   const pageNums = [...document.querySelectorAll('a[href*="/visual/"]')]
     .map(a => {
